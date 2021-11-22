@@ -4,16 +4,7 @@ const SECRET_FILE: &str = "secret";
 
 fn data_dir() -> std::io::Result<std::path::PathBuf> {
     let mut path = home::home_dir().unwrap();
-
-    // // add a dot (hidden) prefix to the executable name
-    // let mut dir: OsString = OsString::new();
-    // dir.push(".");
-    // dir.push(std::env::current_exe()?.file_stem().unwrap()); // IMPORTANT: Should be file_prefix, but it's only available in nightly
-    //
-    // path.push(dir);
-
     path.push(DATA_DIR);
-
     Ok(path)
 }
 
